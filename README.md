@@ -26,71 +26,14 @@ Time spent: 3 hours spent in total
      curl -v 'http://wpdistillery.vm/wp-admin/post.php?post=10' -H 'Cookie: {validSessionCookie}' -d 'action=delete&_wpnonce={deleteNonce}'
      ```
   - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/4.2/src/wp-includes/post.php?rev=32282)
-### 2. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
+    - [post.php](https://core.trac.wordpress.org/browser/tags/4.2/src/wp-includes/post.php?rev=32282)
+### 2. Path Traversal in Unzipping
+  - [ ] Summary: Malicious paths may be included in a compressed ZIP archive that is unpacked to the server as a result of using PHP built in ZipArchive library. This can result in files being unpacked to unintended directories as long as the web server has permission. Reference: https://hackerone.com/reports/205481
+    - Vulnerability types: ZIP path traversal
+    - Tested in version: 4.2
+    - Fixed in version: 4.2.16
+  - [ ] GIF Walkthrough: ![](zip traversal.gif)
   - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-### 3. (Required) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-### 4. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php)
-### 5. (Optional) Vulnerability Name or ID
-  - [ ] Summary: 
-    - Vulnerability types:
-    - Tested in version:
-    - Fixed in version: 
-  - [ ] GIF Walkthrough: 
-  - [ ] Steps to recreate: 
-  - [ ] Affected source code:
-    - [Link 1](https://core.trac.wordpress.org/browser/tags/version/src/source_file.php) 
+     1. Download POC ZIP file (created by Alex Chapman). Link: https://github.com/pydlv/wpvuln/blob/main/zip_poc.zip
+     2. Go to install a plugin and upload the ZIP file.
 
-## Assets
-
-List any additional assets, such as scripts or files
-
-## Resources
-
-- [WordPress Source Browser](https://core.trac.wordpress.org/browser/)
-- [WordPress Developer Reference](https://developer.wordpress.org/reference/)
-
-GIFs created with [LiceCap](http://www.cockos.com/licecap/).
-
-## Notes
-
-Describe any challenges encountered while doing the work
-
-## License
-
-    Copyright [yyyy] [name of copyright owner]
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
