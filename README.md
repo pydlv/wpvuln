@@ -32,7 +32,7 @@ Time spent: 3 hours spent in total
     - Vulnerability types: ZIP path traversal
     - Tested in version: 4.2
     - Fixed in version: 4.2.16
-  - [ ] GIF Walkthrough: ![](zip traversal.gif)
+  - [ ] GIF Walkthrough: ![](zip_traversal.gif)
   - [ ] Steps to recreate: 
      1. Download POC ZIP file (created by Alex Chapman). Link: https://github.com/pydlv/wpvuln/blob/main/zip_poc.zip
      2. Go to install a plugin and upload the ZIP file.
